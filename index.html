@@ -1,0 +1,1271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!--
+  ═══════════════════════════════════════════════════════════
+  TEH LOGISTICS — HOMEPAGE  (index.html)
+  The Eleventh Hour Logistics, Inc.  |  tehlogistics.com
+
+  PAGE-SPECIFIC CLASS PREFIX: .hp-*
+
+  VS CODE SECTION MAP:
+  ──────────────────────────────────────────────────────────
+  SEO / meta        →  lines ~20–80
+  Schema JSON-LD    →  lines ~82–120
+  Google Fonts      →  lines ~122–124
+  Nav HTML          →  lines ~170–215
+  Section 1: Hero   →  lines ~220–295
+  Section 2: About  →  lines ~300–325
+  Section 3: Serve  →  lines ~330–375
+  Section 4: Services→ lines ~380–450
+  Section 5: Partner →  lines ~455–510
+  Section 6: Why Us →  lines ~515–565
+  Section 7: CTA    →  lines ~570–600
+  Footer            →  lines ~605–680
+  Page styles       →  lines ~720 onward (<style> block)
+  ═══════════════════════════════════════════════════════════
+  -->
+
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+  <!-- ── PRIMARY SEO ─────────────────────────────────── -->
+  <title>TEH Logistics | HazMat-Certified Freight Forwarding for Oil &amp; Gas | CTPAT Certified</title>
+
+  <meta name="description"
+    content="The Eleventh Hour Logistics — CTPAT-certified, ISNetworld-registered HazMat freight forwarder. Specializing in OCTG, pipe, chemicals, and oilfield equipment. Newport Beach, CA &amp; Dallas, TX. In Time, Every Time."/>
+
+  <meta name="keywords"
+    content="hazmat freight forwarding, oil gas freight forwarder, CTPAT certified freight, OCTG logistics, ISNetworld registered freight, oilfield freight broker, petroleum freight logistics, chemical freight forwarding, HazMat carrier Texas, freight forwarder Newport Beach CA, oil gas logistics Dallas TX"/>
+
+  <meta name="author"  content="The Eleventh Hour Logistics, Inc."/>
+  <meta name="robots"  content="index, follow, max-snippet:-1, max-image-preview:large"/>
+  <link rel="canonical" href="https://www.tehlogistics.com/"/>
+
+  <!-- ── OPEN GRAPH ──────────────────────────────────── -->
+  <meta property="og:type"        content="website"/>
+  <meta property="og:url"         content="https://www.tehlogistics.com/"/>
+  <meta property="og:title"       content="TEH Logistics | HazMat-Certified Freight Forwarding for Oil &amp; Gas"/>
+  <meta property="og:description" content="CTPAT-certified, ISNetworld-registered freight forwarder for Oil &amp; Gas. OCTG, HazMat, chemicals, and oilfield equipment. In Time, Every Time."/>
+  <meta property="og:image"       content="https://www.tehlogistics.com/assets/images/og-image.jpg"/>
+  <meta property="og:image:width"  content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta property="og:site_name"   content="The Eleventh Hour Logistics"/>
+  <meta property="og:locale"      content="en_US"/>
+
+  <!-- ── TWITTER CARD ────────────────────────────────── -->
+  <meta name="twitter:card"        content="summary_large_image"/>
+  <meta name="twitter:site"        content="@tehlogistics"/>
+  <meta name="twitter:title"       content="TEH Logistics | HazMat-Certified Freight Forwarding for Oil &amp; Gas"/>
+  <meta name="twitter:description" content="CTPAT-certified freight forwarder for Oil &amp; Gas. OCTG, HazMat, chemicals, and oilfield equipment."/>
+  <meta name="twitter:image"       content="https://www.tehlogistics.com/assets/images/og-image.jpg"/>
+
+  <!-- ── SCHEMA.ORG STRUCTURED DATA ─────────────────── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FreightForwarder",
+    "name": "The Eleventh Hour Logistics, Inc.",
+    "alternateName": "TEH Logistics",
+    "url": "https://www.tehlogistics.com",
+    "logo": "https://www.tehlogistics.com/assets/images/logo.svg",
+    "description": "CTPAT-certified, ISNetworld-registered HazMat freight forwarder specializing in OCTG, pipe, chemicals, and oilfield equipment for Oil and Gas operators.",
+    "slogan": "In Time, Every Time",
+    "foundingDate": "2010",
+    "address": [
+      {
+        "@type": "PostalAddress",
+        "addressLocality": "Newport Beach",
+        "addressRegion": "CA",
+        "addressCountry": "US",
+        "description": "Headquarters"
+      },
+      {
+        "@type": "PostalAddress",
+        "addressLocality": "Dallas",
+        "addressRegion": "TX",
+        "addressCountry": "US"
+      }
+    ],
+    "areaServed": "United States",
+    "serviceType": [
+      "HazMat Freight Forwarding",
+      "OCTG Logistics",
+      "Oil and Gas Freight",
+      "Customs Clearance",
+      "Cargo Insurance",
+      "Warehousing and Distribution",
+      "GPS Tracked Carrier Network"
+    ],
+    "hasCredential": [
+      "CTPAT Certified",
+      "ISNetworld Registered",
+      "IATA Certified",
+      "Licensed Freight Forwarder",
+      "DOT 49 CFR Compliant"
+    ],
+    "sameAs": [
+      "https://www.linkedin.com/company/theeleventhhourlogistics",
+      "https://www.instagram.com/tehlogistics",
+      "https://www.facebook.com/tehlogistics"
+    ]
+  }
+  </script>
+
+  <!-- ── FONTS ────────────────────────────────────────
+       Barlow Condensed: headlines, labels, buttons (300–900)
+       Inter:            body copy, UI text (300–600)
+  ─────────────────────────────────────────────────── -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+
+  <!-- ── FAVICON ──────────────────────────────────────
+       Roman numeral clock face — XI (11 o'clock)
+       Swap with real logo file when Keona provides it
+  ─────────────────────────────────────────────────── -->
+  <link rel="icon"           type="image/svg+xml" href="assets/favicon.svg"/>
+  <link rel="apple-touch-icon"                    href="assets/favicon.svg"/>
+
+  <!-- ── SHARED STYLESHEET ────────────────────────── -->
+  <link rel="stylesheet" href="shared.css"/>
+
+  <!-- ═══════════════════════════════════════════════════
+       PAGE-SPECIFIC STYLES  (.hp-*)
+       Only layout unique to the homepage goes here.
+       All brand tokens, buttons, nav, footer → shared.css
+  ═══════════════════════════════════════════════════ -->
+  <style>
+
+    /* ── HP: HERO ──────────────────────────────────── */
+    .hp-hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      padding: 0 var(--teh-gutter);
+    }
+
+   
+    .hp-hero__bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      /* Gradient simulates dark hero until real photo is added */
+      background: linear-gradient(145deg, #050c18 0%, #0a1628 60%, #050c18 100%);
+    }
+
+    .hp-hero__bg-img { 
+      position:absolute; 
+      inset:0; 
+      z-index:0; 
+    }
+
+    /* Dark overlay — keep this div even after swapping background image */
+    .hp-hero__overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background:
+        linear-gradient(to right, rgba(10,22,40,0.90) 0%, rgba(10,22,40,0.45) 100%),
+        linear-gradient(to top,   rgba(10,22,40,0.70) 0%, transparent 60%);
+    }
+
+    /* All hero content sits above overlay */
+    .hp-hero__content {
+      position: relative;
+      z-index: 2;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding-top: var(--teh-nav-h);
+      margin-top: 200px;
+    }
+
+    /* Breadcrumb row */
+    .hp-hero__breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 28px 0 0;
+      font-family: var(--teh-font-head);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(243,239,230,0.55);
+    }
+
+    .hp-hero__breadcrumb-line {
+      height: 1px;
+      width: 200px;
+      background: rgba(243,239,230,0.25);
+      flex-shrink: 0;
+    }
+
+    /* Main headline + subtext row */
+    .hp-hero__body {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      padding-bottom: var(--sp-xl);
+      gap: var(--sp-xl);
+    }
+
+    .hp-hero__left { flex: 1; max-width: 660px; }
+
+    .hp-hero__heading {
+      font-family: var(--teh-font-head);
+      font-size: clamp(38px, 6.5vw, 68px);
+      font-weight: 500;
+      line-height: 0.97;
+      letter-spacing: -0.5px;
+      
+      color: var(--teh-cream);
+      margin: 0;
+    }
+
+    /* "Freight Forwarding" in amber — matches mockup */
+    .hp-hero__heading em {
+      font-style: normal;
+      color: var(--teh-amber);
+    }
+
+    .hp-hero__right {
+      max-width: 340px;
+      flex-shrink: 0;
+    }
+
+    .hp-hero__subtext {
+      font-family: var(--teh-font-body);
+      font-size: 15px;
+      line-height: 1.75;
+      color: rgba(243,239,230,0.78);
+      margin-bottom: var(--sp-md);
+    }
+
+    /* Trust bar — white strip anchored to bottom of hero */
+    .hp-trust {
+      position: relative;
+      z-index: 1;
+      background: black;
+      padding: 60px 48px;
+      width: 100%;
+      margin-top: 100px;
+    }
+
+    .hp-trust__label {
+      font-family: var(--teh-font-head);
+      font-size: 15px;
+      font-weight: 400;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: white;
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .hp-trust__logos {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 50px;
+      flex-wrap: wrap;
+      margin-top: 40px;
+    }
+
+    /* ── HP: WHO WE ARE ────────────────────────────── */
+    .who-img {
+      display: inline-block;
+      vertical-align: middle;
+      height: 1.2em;
+      width: auto;
+      border-radius: 700%;
+    }
+    .hp-about {
+      background: var(--teh-cream);
+      padding: var(--sp-2xl) var(--teh-gutter);
+      text-align: center;
+    }
+
+    .hp-about__inner {
+      max-width: 880px;
+      margin: 0 auto;
+    }
+
+    .hp-about__text {
+      font-family: var(--teh-font-body);
+      font-size: clamp(20px, 2.5vw, 28px);
+      font-weight: 300;
+      line-height: 1.75;
+      color: var(--teh-navy);
+    }
+
+    .hp-about__text strong { font-weight: 600; }
+
+    .hp-about__text .hp-about__fade {
+      opacity: 0.55;
+    }
+
+    /* ── HP: WHO WE SERVE ──────────────────────────── */
+    .hp-serve {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 540px;
+    }
+
+    .hp-serve__img {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hp-serve__img-real { 
+      width:100%; 
+      height:100%; 
+      object-fit:cover; 
+    }
+
+
+    .hp-serve__body {
+      background: var(--teh-navy);
+      color: var(--teh-cream);
+      padding: var(--sp-xl) 64px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .hp-serve__list {
+      margin: var(--sp-md) 0 var(--sp-lg);
+      list-style: none;
+      padding: 0;
+    }
+
+    .hp-serve__list li {
+      position: relative;
+      padding: 10px 0 10px 22px;
+      font-family: var(--teh-font-body);
+      font-size: 15px;
+      color: var(--teh-text-on-dark);
+      border-bottom: 1px solid var(--teh-border-dark);
+    }
+
+    .hp-serve__list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--teh-amber);
+    }
+
+    /* ── HP: SERVICES ──────────────────────────────── */
+    .hp-services {
+      background: var(--teh-navy);
+    }
+
+    .hp-services__header {
+      padding: var(--sp-2xl) var(--teh-gutter) var(--sp-lg);
+      max-width: var(--teh-max-w);
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .hp-services__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      /* No gap — cells flush against each other, separated only by overlay contrast */
+    }
+
+    .hp-svc-card {
+      position: relative;
+      height: 530px;
+      overflow: hidden;
+      background: var(--teh-navy-card); /* fallback colour when no image */
+    }
+
+    .hp-svc-card img {
+      width: 100%;
+      height: 100%;
+      object-fit:cover;
+      transition: transform 0.3s var(--ease);
+      transform: scale(1);
+    }
+
+    .hp-svc-card:hover img {
+  transform: scale(1) !important;
+}
+
+    /* Dark overlay on service cards */
+    .hp-svc-card__overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(10,22,40,0.72);
+      transition: background 0.3s;
+      z-index: 1;
+    }
+
+    .hp-svc-card:hover .hp-svc-card__overlay {
+      background: rgba(10,22,40,0.58);
+    }
+
+    /* Amber left border reveals on hover */
+    .hp-svc-card::after {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 3px;
+      background: var(--teh-amber);
+      transform: scaleY(0);
+      transform-origin: bottom;
+      transition: transform 0.32s var(--ease);
+      z-index: 3;
+    }
+
+    .hp-svc-card:hover::after {
+      transform: scaleY(1);
+    }
+
+    .hp-svc-card__body {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: var(--sp-md) var(--sp-md) var(--sp-lg);
+      z-index: 2;
+    }
+
+    .hp-svc-card__num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border: 1px solid rgba(243,239,230,0.35);
+      border-radius: 50%;
+      font-family: var(--teh-font-head);
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--teh-cream);
+      margin-bottom: 12px;
+    }
+
+    .hp-svc-card__title {
+      font-family: var(--teh-font-head);
+      font-size: 20px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--teh-cream);
+      line-height: 1.15;
+      margin-bottom: 8px;
+    }
+
+    .hp-svc-card__desc {
+      font-family: var(--teh-font-body);
+      font-size: 13px;
+      color: rgba(243,239,230,0.72);
+      line-height: 1.65;
+    }
+
+    /* ── HP: PARTNER (FREIGHT AGENTS) ──────────────── */
+    .hp-partner {
+      background: var(--teh-cream);
+      padding: var(--sp-2xl) 0;
+    }
+
+    .hp-partner__header {
+      text-align: center;
+      padding: 0 var(--teh-gutter);
+      margin-bottom: var(--sp-lg);
+      max-width: var(--teh-max-w);
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hp-partner__heading {
+      font-family: var(--teh-font-head);
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--teh-navy);
+    }
+
+    .hp-partner__hero {
+      position: relative;
+      width: 100%;
+      height: 80%;
+      margin-bottom: var(--sp-lg);
+      overflow: hidden;
+      object-fit: cover;
+    }
+
+    .hp-partner__hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(10,22,40,0.42);
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-start;
+      padding: var(--sp-md);
+      z-index: 1;
+    }
+
+    .hp-partner__logo-ph {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--teh-font-head);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(243,239,230,0.70);
+      background: rgba(10,22,40,0.50);
+      padding: 8px 14px;
+      border: 1px dashed rgba(243,239,230,0.25);
+    }
+
+    .hp-partner__logo-img {
+      width: 120px;
+      height: auto;
+    }
+
+    .hp-partner__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--sp-lg);
+      padding: 0 var(--teh-gutter);
+      max-width: var(--teh-max-w);
+      margin: 0 auto var(--sp-xl);
+    }
+
+    .hp-partner__item {
+      display: flex;
+      gap: var(--sp-xs);
+      align-items: flex-start;
+    }
+
+    .hp-partner__bullet {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    /* Use brand color #F5A623 */
+    background-color: #F5A623; 
+    margin-top: 5px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.hp-partner__bullet::after {
+    content: '\2713'; /* Unicode checkmark[cite: 1] */
+    color: #F3EFE6;   /* Brand Warm White */
+    font-size: 10px;
+    font-weight: 900;
+}
+
+    .hp-partner__text {
+      font-family: var(--teh-font-body);
+      font-size: 18px;
+      color: var(--teh-navy);
+      line-height: 1.5;
+    }
+
+    .hp-partner__action {
+      text-align: center;
+      padding: 0 var(--teh-gutter);
+    }
+
+    /* ── HP: WHY US ────────────────────────────────── */
+    .hp-why {
+      background: black;
+      padding: var(--sp-2xl) var(--teh-gutter);
+      text-align: center;
+    }
+
+    .hp-why__inner {
+      max-width: var(--teh-max-w);
+      margin: 0 auto;
+    }
+
+    .hp-why__heading {
+      font-family: var(--teh-font-head);
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--teh-cream);
+      margin-bottom: var(--sp-xl);
+    }
+
+    .hp-why__pillars {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-bottom: 1px dashed white;
+      margin-bottom: var(--sp-xl);
+    }
+
+    .hp-why__pillar {
+      padding: var(--sp-lg) var(--sp-md);
+      border-left: 1px dashed white;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 260px;
+      text-align: left;
+    }
+
+    .hp-why__pillar:first-child { border-left: none; }
+
+    .hp-why__pillar-head {
+      font-family: var(--teh-font-head);
+      font-size: clamp(22px, 2.5vw, 32px);
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--teh-amber);
+      line-height: 1.1;
+    }
+
+    .hp-why__pillar-sub {
+      font-family: var(--teh-font-body);
+      font-size: 15px;
+      color: white;
+      line-height: 1.6;
+    }
+
+    /* ── HP: GET STARTED CTA ───────────────────────── */
+    .hp-cta {
+      position: relative;
+      min-height: 480px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      padding: var(--sp-2xl) var(--teh-gutter);
+    }
+
+    .hp-cta__bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background: linear-gradient(145deg, #060c17 0%, #0d1930 50%, #060c17 100%);
+    }
+
+    .hp-cta__overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: rgba(10,22,40,0.80);
+    }
+
+    .hp-cta__content {
+      position: relative;
+      z-index: 2;
+      max-width: 760px;
+      text-align: center;
+    }
+
+    .hp-cta__heading {
+      font-family: var(--teh-font-head);
+      font-size: clamp(28px, 5vw, 56px);
+      font-weight: 500;
+      color: var(--teh-cream);
+      line-height: 1.05;
+      margin-bottom: var(--sp-md);
+    }
+
+    .hp-cta__desc {
+      font-family: var(--teh-font-body);
+      font-size: 16px;
+      line-height: 1.7;
+      color: rgba(243,239,230,0.75);
+      max-width: 600px;
+      margin: 0 auto var(--sp-lg);
+    }
+
+    /* ── HP: RESPONSIVE ────────────────────────────── */
+    @media (max-width: 1100px) {
+      .hp-partner__grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 900px) {
+      .hp-hero__body { flex-direction: column; align-items: flex-start; gap: var(--sp-md); }
+      .hp-hero__right { max-width: 100%; }
+      .hp-serve { grid-template-columns: 1fr; }
+      .hp-serve__body { padding: var(--sp-xl) var(--teh-gutter-m); }
+      .hp-services__grid { grid-template-columns: repeat(2, 1fr); }
+      .hp-why__pillars { grid-template-columns: repeat(2, 1fr); }
+      .hp-why__pillar { border-left: none; border-top: 1px solid var(--teh-border-dark); }
+      .hp-why__pillar:nth-child(odd) { border-left: none; }
+    }
+
+    @media (max-width: 600px) {
+      .hp-hero__heading { font-size: clamp(38px, 10vw, 52px); }
+      .hp-hero__breadcrumb-line { width: 60px; }
+      .hp-services__grid { grid-template-columns: 1fr; }
+      .hp-partner__grid { grid-template-columns: 1fr; }
+      .hp-why__pillars { grid-template-columns: 1fr; }
+      .hp-serve__body { padding: var(--sp-xl) var(--teh-gutter-s); }
+      .hp-trust__logos { gap: 8px; }
+      .hp-partner__hero { height: 300px; }
+    }
+
+  </style>
+
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════
+     NAVIGATION (shared across all pages)
+     JS: nav scroll    → adds .nav--scrolled
+     JS: active link   → adds .nav-link--active
+     JS: hamburger     → toggles .is-open
+     Appscrip: add data-portal to portal entry links
+═══════════════════════════════════════════════════ -->
+<nav class="nav" id="mainNav" role="navigation" aria-label="Main navigation">
+
+  <a class="nav-logo" href="index.html" aria-label="The Eleventh Hour Logistics — Home">
+    <img src="assets/favicon.svg" alt="The Eleventh Hour Logistics" class="nav-logo__img"/>
+
+  <ul class="nav-links" role="menubar">
+    <li><a class="nav-link nav-link--active" href="index.html"    role="menuitem">Home</a></li>
+    <li><a class="nav-link"                  href="hub.html"      role="menuitem">Hub</a></li>
+    <li><a class="nav-link"                  href="services.html" role="menuitem">Services</a></li>
+    <li><a class="nav-link"                  href="carriers.html" role="menuitem">Carriers</a></li>
+    <li><a class="nav-link"                  href="agents.html"   role="menuitem">Agents</a></li>
+    <li><a class="nav-link"                  href="about.html"    role="menuitem">About</a></li>
+    <li><a class="nav-link"                  href="contact.html"  role="menuitem">Contact</a></li>
+  </ul>
+
+  <div class="nav-right">
+    <a class="teh-btn teh-btn--primary" href="quote.html">Request a Quote</a>
+    <button class="nav-hamburger"
+            id="navHamburger"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+            aria-controls="mobMenu">
+      <span class="nav-hamburger__bar"></span>
+      <span class="nav-hamburger__bar"></span>
+      <span class="nav-hamburger__bar"></span>
+    </button>
+  </div>
+
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mob-menu" id="mobMenu" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+  <a class="mob-link mob-link--active" href="index.html"    onclick="TEH.closeMenu()">Home</a>
+  <a class="mob-link"                  href="hub.html"      onclick="TEH.closeMenu()">Hub</a>
+  <a class="mob-link"                  href="services.html" onclick="TEH.closeMenu()">Services</a>
+  <a class="mob-link"                  href="carriers.html" onclick="TEH.closeMenu()">Carriers</a>
+  <a class="mob-link"                  href="agents.html"   onclick="TEH.closeMenu()">Agents</a>
+  <a class="mob-link"                  href="about.html"    onclick="TEH.closeMenu()">About</a>
+  <a class="mob-link"                  href="contact.html"  onclick="TEH.closeMenu()">Contact</a>
+  <div class="mob-menu__cta">
+    <a class="teh-btn teh-btn--primary"   href="quote.html"  onclick="TEH.closeMenu()" style="justify-content:center;">Request a Quote</a>
+    <a class="teh-btn teh-btn--secondary" href="agents.html" onclick="TEH.closeMenu()" style="justify-content:center;">Apply to Partner</a>
+  </div>
+</div>
+
+
+<main id="mainContent">
+
+  <!-- ═══════════════════════════════════════════════
+       SECTION 1: HERO
+       ─────────────────────────────────────────────
+       Background: assets/images/hero-bg.jpg (PENDING)
+       Remove .hp-hero__bg div comment & swap instructions above
+  ═══════════════════════════════════════════════════ -->
+  <section class="hp-hero" aria-labelledby="heroHeading">
+
+        <img src="assets/images/hero-bg.png"
+             alt="Oil refinery and tanker truck operations"
+             class="hp-hero__bg-img teh-img"/>
+
+    <div class="hp-hero__overlay" aria-hidden="true"></div>
+
+    <div class="hp-hero__content">
+
+      <!-- Breadcrumb -->
+      <div class="hp-hero__breadcrumb" aria-label="Breadcrumb">
+        <span>Home</span>
+        <div class="hp-hero__breadcrumb-line" aria-hidden="true"></div>
+      </div>
+
+      <!-- Headline + CTA -->
+      <div class="hp-hero__body">
+
+        <div class="hp-hero__left teh-reveal">
+          <h1 class="hp-hero__heading" id="heroHeading">
+            Hazmat-Certified Freight 
+            Forwarding
+            for Oil &amp; Gas
+          </h1>
+        </div>
+
+        <div class="hp-hero__right teh-reveal teh-reveal--delay-2">
+          <p class="hp-hero__subtext">
+            Specializing in OCTG, pipe, chemicals, and oilfield equipment shipped safely and on time.
+          </p>
+          <a class="teh-btn teh-btn--primary" href="quote.html">Request a Quote</a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Trust Bar -->
+    <div class="hp-trust" role="complementary" aria-label="Industry certifications">
+    <p class="hp-trust__label">Trusted Across the Oil &amp; Gas Supply Chain</p>
+    <div class="hp-trust__logos">
+        <img src="assets/images/trust1.png" alt="IATA" class="teh-cert-logo__img"/>
+        <img src="assets/images/trust2.png" alt="CTPAT-certified" class="teh-cert-logo__img"/>
+        <img src="assets/images/trust3.png" alt="Licensed Freight Forwarder" class="teh-cert-logo__img"/>
+        <img src="assets/images/trust4.png" alt="ISNetworld" class="teh-cert-logo__img"/>
+        <img src="assets/images/trust5.png" alt="US DOT" class="teh-cert-logo__img"/>
+    </div>
+</div>
+
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════
+       SECTION 2: WHO WE ARE
+  ═══════════════════════════════════════════════════ -->
+  <section class="hp-about" aria-labelledby="aboutHeading">
+    <div class="hp-about__inner teh-reveal">
+
+      <p class="teh-eyebrow teh-eyebrow--line" style="justify-content:center;" id="aboutHeading">
+        Who We Are
+      </p>
+
+     <p class="hp-about__text">
+    <strong>We're a vertically integrated energy <img src="assets/images/who1.png" class="who-img"> logistics company; we move it, fuel it, and</strong> ensure it moves legally.
+    <span class="hp-about__fade"><br>
+        We handle <img src="assets/images/who2.png" class="who-img"> the cargo most companies aren't licensed to touch.
+    </span>
+</p>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════
+       SECTION 3: WHO WE SERVE
+       Left: assets/images/serve-oilfield.jpg (PENDING)
+       See swap instructions in <style> block above
+  ═══════════════════════════════════════════════════ -->
+  <section class="hp-serve" aria-labelledby="serveHeading">
+
+    <!-- Left: image placeholder -->
+    <div class="hp-serve__img" aria-hidden="true">
+      <img src="assets/images/serve.png"
+             alt="Oil storage tanks and refinery at dusk"
+             class="hp-serve__img-real teh-img"
+             loading="lazy"/>
+    </div>
+
+    <!-- Right: content -->
+    <div class="hp-serve__body teh-reveal">
+
+      <p class="teh-eyebrow teh-eyebrow--line">Who We Serve</p>
+
+      <h2 class="teh-section-heading" id="serveHeading">
+        Trusted by Oil &amp; Gas<br>Operators and Contractors
+      </h2>
+
+      <ul class="hp-serve__list" role="list">
+        <li>Drilling Contractors</li>
+        <li>EPC Firms</li>
+        <li>E&amp;P Operators</li>
+        <li>Oilfield Equipment Manufacturers</li>
+        <li>Refineries &amp; Chemical Plants</li>
+      </ul>
+
+      <a class="teh-btn teh-btn--primary" href="about.html">More About Us</a>
+
+    </div>
+
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════
+       SECTION 4: SERVICES
+       Cards use dark overlay on real photos.
+       Swap data-slot images when Keona provides photos.
+       See inline image swap comments on each card.
+  ═══════════════════════════════════════════════════ -->
+  <section class="hp-services" id="services" aria-labelledby="servicesHeading">
+
+    <div class="hp-services__header teh-reveal">
+      <p class="teh-eyebrow" style="justify-content:center;">Services</p>
+      <h2 class="teh-section-heading" id="servicesHeading">
+        Specialized Freight Services for Oil &amp; Gas
+      </h2>
+    </div>
+
+    <div class="hp-services__grid" role="list">
+
+      <!-- Card 1 -->
+      <article class="hp-svc-card teh-reveal" role="listitem" data-slot="svc-hazmat">
+  <!-- The Background Image -->
+  <img src="assets/images/service1.png" class="hp-svc-card__img" alt="Hazmat Freight Forwarding">
+  
+  <!-- The Dark Overlay Tint -->
+  <div class="hp-svc-card__overlay" aria-hidden="true"></div>
+  
+  <div class="hp-svc-card__body">
+    <span class="hp-svc-card__num" aria-hidden="true">1</span>
+    <h3 class="hp-svc-card__title">Hazmat Freight Forwarding</h3>
+    <p class="hp-svc-card__desc">Safe, compliant transport of hazardous materials across all modes.</p>
+  </div>
+</article>
+
+      <!-- Card 2 -->
+
+      <article class="hp-svc-card teh-reveal" role="listitem" data-slot="svc-hazmat">
+  <!-- The Background Image -->
+  <img src="assets/images/service2.png" class="hp-svc-card__img" alt="OCTG &amp; Pipe Logistics">
+  
+  <!-- The Dark Overlay Tint -->
+  <div class="hp-svc-card__overlay" aria-hidden="true"></div>
+  
+  <div class="hp-svc-card__body">
+    <span class="hp-svc-card__num" aria-hidden="true">2</span>
+    <h3 class="hp-svc-card__title">OCTG &amp; Pipe Logistics</h3>
+    <p class="hp-svc-card__desc">Handling, transport, and delivery of OCTG and pipe.</p>
+  </div>
+</article>
+
+      <!-- Card 3 -->
+      <article class="hp-svc-card teh-reveal" role="listitem" data-slot="svc-hazmat">
+  <!-- The Background Image -->
+  <img src="assets/images/service3.png" class="hp-svc-card__img" alt="Customs Clearance &amp; Compliance">
+  
+  <!-- The Dark Overlay Tint -->
+  <div class="hp-svc-card__overlay" aria-hidden="true"></div>
+  
+  <div class="hp-svc-card__body">
+    <span class="hp-svc-card__num" aria-hidden="true">3</span>
+    <h3 class="hp-svc-card__title">Customs Clearance &amp; Compliance</h3>
+    <p class="hp-svc-card__desc">Managing documentation, regulations, and customs clearance.</p>
+  </div>
+</article>
+
+      <!-- Card 4 -->
+
+      <article class="hp-svc-card teh-reveal" role="listitem" data-slot="svc-hazmat">
+  <!-- The Background Image -->
+  <img src="assets/images/service4.png" class="hp-svc-card__img" alt="Cargo Insurance">
+  
+  <!-- The Dark Overlay Tint -->
+  <div class="hp-svc-card__overlay" aria-hidden="true"></div>
+  
+  <div class="hp-svc-card__body">
+    <span class="hp-svc-card__num" aria-hidden="true">4</span>
+    <h3 class="hp-svc-card__title">Cargo Insurance</h3>
+    <p class="hp-svc-card__desc">Comprehensive protection coverage for high-value freight.</p>
+  </div>
+</article>
+
+      <!-- Card 5 -->
+      <article class="hp-svc-card teh-reveal" role="listitem" data-slot="svc-hazmat">
+  <!-- The Background Image -->
+  <img src="assets/images/service5.png" class="hp-svc-card__img" alt="Warehousing &amp; Distribution">
+  
+  <!-- The Dark Overlay Tint -->
+  <div class="hp-svc-card__overlay" aria-hidden="true"></div>
+  
+  <div class="hp-svc-card__body">
+    <span class="hp-svc-card__num" aria-hidden="true">5</span>
+    <h3 class="hp-svc-card__title">Warehousing &amp; Distribution</h3>
+    <p class="hp-svc-card__desc">Secure storage, inventory handling, and distribution solutions.</p>
+  </div>
+</article>
+
+      <!-- Card 6 -->
+
+      <article class="hp-svc-card teh-reveal" role="listitem" data-slot="svc-hazmat">
+  <!-- The Background Image -->
+  <img src="assets/images/service6.png" class="hp-svc-card__img" alt="GPS-Tracked Carrier Network">
+  
+  <!-- The Dark Overlay Tint -->
+  <div class="hp-svc-card__overlay" aria-hidden="true"></div>
+  
+  <div class="hp-svc-card__body">
+    <span class="hp-svc-card__num" aria-hidden="true">6</span>
+    <h3 class="hp-svc-card__title">GPS-Tracked Carrier Network</h3>
+    <p class="hp-svc-card__desc">Real-time visibility across a vetted, GPS-enabled carrier network.</p>
+  </div>
+</article>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════
+       SECTION 5: PARTNER / FREIGHT AGENTS
+  ═══════════════════════════════════════════════════ -->
+  <section class="hp-partner" id="agents" aria-labelledby="partnerHeading">
+
+    <div class="hp-partner__header teh-reveal">
+      <p class="teh-eyebrow" style="justify-content:center;">For Freight Agents</p>
+      <h2 class="hp-partner__heading" id="partnerHeading">
+        Partner With The Eleventh Hour Logistics
+      </h2>
+    </div>
+
+    <!-- Full-bleed image with overlay -->
+    <div class="hp-partner__hero hp-partner__hero-img">
+      <img src="assets/images/partner-bg.png"
+               alt="Red semi truck on highway at dusk"
+               class="teh-img"
+               loading="lazy"/>
+
+      <div class="hp-partner__hero-overlay" aria-hidden="true">
+        <img src="assets/favicon.svg" style="width: 40px;"
+                 alt="The Eleventh Hour Logistics"
+                 class="hp-partner__logo-img"/>
+      </div>
+    </div>
+
+    <!-- 4-item grid -->
+    <div class="hp-partner__grid teh-reveal" role="list">
+
+      <div class="hp-partner__item" role="listitem">
+        <span class="hp-partner__bullet" aria-hidden="true"></span>
+        <p class="hp-partner__text">Co-brokering opportunities under TEH authority</p>
+      </div>
+
+      <div class="hp-partner__item" role="listitem">
+        <span class="hp-partner__bullet" aria-hidden="true"></span>
+        <p class="hp-partner__text">Access to vetted hazmat carrier network</p>
+      </div>
+
+      <div class="hp-partner__item" role="listitem">
+        <span class="hp-partner__bullet" aria-hidden="true"></span>
+        <p class="hp-partner__text">Onboarding and partnership terms</p>
+      </div>
+
+      <div class="hp-partner__item" role="listitem">
+        <span class="hp-partner__bullet" aria-hidden="true"></span>
+        <p class="hp-partner__text">Commission structure overview</p>
+      </div>
+
+    </div>
+
+    <div class="hp-partner__action teh-reveal teh-reveal--delay-1">
+      <a class="teh-btn teh-btn--primary" href="agents.html">Apply to Partner</a>
+    </div>
+
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════
+       SECTION 6: WHY US
+  ═══════════════════════════════════════════════════ -->
+  <section class="hp-why" id="why-us" aria-labelledby="whyHeading">
+    <div class="hp-why__inner">
+
+      <div class="teh-reveal">
+        <p class="teh-eyebrow" style="justify-content:center;">Why Us</p>
+        <h2 class="hp-why__heading" id="whyHeading">
+          Built on Certification, Compliance, and Trust
+        </h2>
+      </div>
+
+      <!-- 4 credential pillars -->
+      <div class="hp-why__pillars teh-reveal teh-reveal--delay-1" role="list">
+
+        <div class="hp-why__pillar" role="listitem">
+          <h3 class="hp-why__pillar-head">Hazmat-trained</h3>
+          <p class="hp-why__pillar-sub">to DOT 49 CFR &amp; IATA Standards</p>
+        </div>
+
+        <div class="hp-why__pillar" role="listitem">
+          <h3 class="hp-why__pillar-head">CTPAT</h3>
+          <p class="hp-why__pillar-sub">Certified Since 2010</p>
+        </div>
+
+        <div class="hp-why__pillar" role="listitem">
+          <h3 class="hp-why__pillar-head">ISNetworld</h3>
+          <p class="hp-why__pillar-sub">Registered</p>
+        </div>
+
+        <div class="hp-why__pillar" role="listitem">
+          <h3 class="hp-why__pillar-head">Serving Oil &amp; Gas</h3>
+          <p class="hp-why__pillar-sub">Operators and Contractors</p>
+        </div>
+
+      </div>
+
+      <!-- Certification logo bar -->
+      <div class="teh-cert-logos teh-reveal teh-reveal--delay-2"
+           role="list"
+           aria-label="Industry certifications">
+        <span class="teh-cert-logo" role="listitem" title="IATA Certified"><img src="assets/images/trust1.png" alt="IATA" class="teh-cert-logo__img"/></span>
+        <span class="teh-cert-logo" role="listitem" title="CTPAT Certified"><img src="assets/images/trust2.png" alt="CTPAT" class="teh-cert-logo__img"/></span>
+        <span class="teh-cert-logo" role="listitem" title="Licensed Freight Forwarder"><img src="assets/images/trust3.png" alt="Licensed Freight Forwarder" class="teh-cert-logo__img"/></span>
+        <span class="teh-cert-logo" role="listitem" title="ISNetworld Registered"><img src="assets/images/trust4.png" alt="ISNetworld" class="teh-cert-logo__img"/></span>
+        <span class="teh-cert-logo" role="listitem" title="US DOT Compliant"><img src="assets/images/trust5.png" alt="US DOT" class="teh-cert-logo__img"/></span>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════
+       SECTION 7: GET STARTED CTA
+  ═══════════════════════════════════════════════════ -->
+  <section class="hp-cta" aria-labelledby="ctaHeading">
+    <img src="assets/images/quote-bg.png"
+             alt="Oil refinery at night"
+             class="hp-cta__bg teh-img"
+             loading="lazy"
+             style="position:absolute;inset:0;z-index:0;"/>
+    <div class="hp-cta__overlay" aria-hidden="true"></div>
+
+    <div class="hp-cta__content teh-reveal">
+      <p class="teh-eyebrow" style="justify-content:center;">Get Started</p>
+      <h2 class="hp-cta__heading" id="ctaHeading">
+        Move Your Freight with a Partner Built for Oil &amp; Gas
+      </h2>
+      <p class="hp-cta__desc">
+        Get a fast, compliant quote for hazmat, OCTG, chemicals, and specialized freight —
+        handled by a team that understands the stakes.
+      </p>
+      <a class="teh-btn teh-btn--primary" href="quote.html">Request a Quote</a>
+    </div>
+
+  </section>
+
+</main>
+
+
+<!-- ═══════════════════════════════════════════════════
+     FOOTER (shared across all pages — copy this block
+     into every page, update active link only)
+═══════════════════════════════════════════════════ -->
+<footer class="teh-footer" role="contentinfo">
+  <div class="teh-footer__inner">
+
+    <div class="teh-footer__grid">
+
+      <!-- Column 1: CTA + Social -->
+      <div>
+        <span class="teh-footer__col-label">Contact</span>
+
+        <div class="teh-footer__cta-row">
+          <span class="teh-footer__request">Request a Quote</span>
+          <span class="teh-footer__divider" aria-hidden="true">|</span>
+          <a class="teh-btn teh-btn--primary" href="agents.html">Apply to Partner</a>
+        </div>
+
+        <span class="teh-footer__col-label">Quick Contact</span>
+
+        <div class="teh-footer__socials" role="list" aria-label="Social media links">
+          <a href="https://linkedin.com/company/theeleventhhourlogistics"
+             class="teh-social-icon"
+             target="_blank" rel="noopener noreferrer"
+             aria-label="LinkedIn" role="listitem"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+              <path d="M26.111,3H5.889c-1.595,0-2.889,1.293-2.889,2.889V26.111c0,1.595,1.293,2.889,2.889,2.889H26.111c1.595,0,2.889-1.293,2.889-2.889V5.889c0-1.595-1.293-2.889-2.889-2.889ZM10.861,25.389h-3.877V12.87h3.877v12.519Zm-1.957-14.158c-1.267,0-2.293-1.034-2.293-2.31s1.026-2.31,2.293-2.31,2.292,1.034,2.292,2.31-1.026,2.31-2.292,2.31Zm16.485,14.158h-3.858v-6.571c0-1.802-.685-2.809-2.111-2.809-1.551,0-2.362,1.048-2.362,2.809v6.571h-3.718V12.87h3.718v1.686s1.118-2.069,3.775-2.069,4.556,1.621,4.556,4.975v7.926Z" fill-rule="evenodd"></path>
+            </svg></a>
+
+          <a href="https://twitter.com/tehlogistics"
+             class="teh-social-icon"
+             target="_blank" rel="noopener noreferrer"
+             aria-label="Twitter / X" role="listitem"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+              <path d="M18.42,14.009L27.891,3h-2.244l-8.224,9.559L10.855,3H3.28l9.932,14.455L3.28,29h2.244l8.684-10.095,6.936,10.095h7.576l-10.301-14.991h0Zm-3.074,3.573l-1.006-1.439L6.333,4.69h3.447l6.462,9.243,1.006,1.439,8.4,12.015h-3.447l-6.854-9.804h0Z"></path>
+            </svg></a>
+
+          <a href="https://instagram.com/tehlogistics"
+             class="teh-social-icon"
+             target="_blank" rel="noopener noreferrer"
+             aria-label="Instagram" role="listitem"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+              <path d="M10.202,2.098c-1.49,.07-2.507,.308-3.396,.657-.92,.359-1.7,.84-2.477,1.619-.776,.779-1.254,1.56-1.61,2.481-.345,.891-.578,1.909-.644,3.4-.066,1.49-.08,1.97-.073,5.771s.024,4.278,.096,5.772c.071,1.489,.308,2.506,.657,3.396,.359,.92,.84,1.7,1.619,2.477,.779,.776,1.559,1.253,2.483,1.61,.89,.344,1.909,.579,3.399,.644,1.49,.065,1.97,.08,5.771,.073,3.801-.007,4.279-.024,5.773-.095s2.505-.309,3.395-.657c.92-.36,1.701-.84,2.477-1.62s1.254-1.561,1.609-2.483c.345-.89,.579-1.909,.644-3.398,.065-1.494,.081-1.971,.073-5.773s-.024-4.278-.095-5.771-.308-2.507-.657-3.397c-.36-.92-.84-1.7-1.619-2.477s-1.561-1.254-2.483-1.609c-.891-.345-1.909-.58-3.399-.644s-1.97-.081-5.772-.074-4.278,.024-5.771,.096m.164,25.309c-1.365-.059-2.106-.286-2.6-.476-.654-.252-1.12-.557-1.612-1.044s-.795-.955-1.05-1.608c-.192-.494-.423-1.234-.487-2.599-.069-1.475-.084-1.918-.092-5.656s.006-4.18,.071-5.656c.058-1.364,.286-2.106,.476-2.6,.252-.655,.556-1.12,1.044-1.612s.955-.795,1.608-1.05c.493-.193,1.234-.422,2.598-.487,1.476-.07,1.919-.084,5.656-.092,3.737-.008,4.181,.006,5.658,.071,1.364,.059,2.106,.285,2.599,.476,.654,.252,1.12,.555,1.612,1.044s.795,.954,1.051,1.609c.193,.492,.422,1.232,.486,2.597,.07,1.476,.086,1.919,.093,5.656,.007,3.737-.006,4.181-.071,5.656-.06,1.365-.286,2.106-.476,2.601-.252,.654-.556,1.12-1.045,1.612s-.955,.795-1.608,1.05c-.493,.192-1.234,.422-2.597,.487-1.476,.069-1.919,.084-5.657,.092s-4.18-.007-5.656-.071M21.779,8.517c.002,.928,.755,1.679,1.683,1.677s1.679-.755,1.677-1.683c-.002-.928-.755-1.679-1.683-1.677,0,0,0,0,0,0-.928,.002-1.678,.755-1.677,1.683m-12.967,7.496c.008,3.97,3.232,7.182,7.202,7.174s7.183-3.232,7.176-7.202c-.008-3.97-3.233-7.183-7.203-7.175s-7.182,3.233-7.174,7.203m2.522-.005c-.005-2.577,2.08-4.671,4.658-4.676,2.577-.005,4.671,2.08,4.676,4.658,.005,2.577-2.08,4.671-4.658,4.676-2.577,.005-4.671-2.079-4.676-4.656h0"></path>
+            </svg></a>
+
+          <a href="https://facebook.com/tehlogistics"
+             class="teh-social-icon"
+             target="_blank" rel="noopener noreferrer"
+             aria-label="Facebook" role="listitem"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+              <path d="M16,2c-7.732,0-14,6.268-14,14,0,6.566,4.52,12.075,10.618,13.588v-9.31h-2.887v-4.278h2.887v-1.843c0-4.765,2.156-6.974,6.835-6.974,.887,0,2.417,.174,3.043,.348v3.878c-.33-.035-.904-.052-1.617-.052-2.296,0-3.183,.87-3.183,3.13v1.513h4.573l-.786,4.278h-3.787v9.619c6.932-.837,12.304-6.74,12.304-13.897,0-7.732-6.268-14-14-14Z"></path>
+            </svg></a>
+        </div>
+      </div>
+
+      <!-- Column 2: Address -->
+      <div>
+        <span class="teh-footer__col-label">Address</span>
+        <address class="teh-footer__address">
+          <span class="teh-footer__address-hq">Headquarters</span>
+          <p>Newport Beach, CA</p>
+          <p>Dallas, TX</p>
+        </address>
+      </div>
+
+      <!-- Column 3: Main navigation -->
+      <div>
+        <span class="teh-footer__col-label">Main</span>
+        <nav aria-label="Footer navigation">
+          <a class="teh-footer__nav-link" href="index.html">Home</a>
+          <a class="teh-footer__nav-link" href="hub.html">Hub</a>
+          <a class="teh-footer__nav-link" href="quote.html">Quote</a>
+          <a class="teh-footer__nav-link" href="services.html">Services</a>
+          <a class="teh-footer__nav-link" href="carriers.html">Carriers</a>
+          <a class="teh-footer__nav-link" href="agents.html">Agents</a>
+          <a class="teh-footer__nav-link" href="about.html">About</a>
+          <a class="teh-footer__nav-link" href="contact.html">Contact</a>
+        </nav>
+      </div>
+
+      <!-- Column 4: Support / legal -->
+      <div>
+        <span class="teh-footer__col-label">Support</span>
+        <a class="teh-footer__nav-link" href="privacy.html">Privacy Policy</a>
+        <a class="teh-footer__nav-link" href="terms.html">Terms of Service</a>
+        <a class="teh-footer__nav-link" href="cookies.html">Cookie Policy</a>
+      </div>
+
+    </div><!-- /.teh-footer__grid -->
+
+    <div class="teh-footer__bottom">
+      <p class="teh-footer__legal">
+        ©2026. All Rights Reserved | The Eleventh Hour Logistics, Inc.
+      </p>
+    </div>
+
+  </div><!-- /.teh-footer__inner -->
+
+  <!-- Large brand watermark -->
+  <div class="teh-footer__watermark" aria-hidden="true">THEELEVENTHHOUR</div>
+
+</footer>
+
+
+<!-- ── SHARED SCRIPTS ── -->
+<script src="shared.js"></script>
+
+<!--
+  PAGE-SPECIFIC SCRIPTS
+  Add any homepage-only JavaScript below this comment.
+  Example: video section auto-detect, homepage-only animations, etc.
+-->
+
+</body>
+<div id="loader" class="loader">
+  <div class="clock">
+    <div class="clock__face">
+      <!-- Markers for 12 and 11 -->
+      <div class="clock__marker clock__marker--12"></div>
+      <div class="clock__marker clock__marker--11"></div>
+    </div>
+    <div id="clockHand" class="clock__hand"></div>
+  </div>
+  <p class="loader__text">The Eleventh Hour</p>
+</div>
+</html>
