@@ -4,14 +4,15 @@
  *
  * TABLE OF CONTENTS
  * ─────────────────────────────────────────────────────────
- * 1.  NAV SCROLL          — frosted glass on scroll
- * 2.  MOBILE MENU         — hamburger toggle
- * 3.  ACTIVE NAV LINK     — highlights current page
- * 4.  SCROLL REVEAL       — IntersectionObserver fade-in
- * 5.  SMOOTH ANCHOR       — smooth scroll for #hash links
- * 6.  TICK SOUND          — Web Audio API clock tick
- * 7.  FORM HANDLER        — Formspree submission + validation
- * 8.  PORTAL HOOKS        — stubs for Appscrip SSO / redirects
+ * 1.  NAV SCROLL         — frosted glass on scroll
+ * 2.  MOBILE MENU        — hamburger toggle
+ * 3.  ACTIVE NAV LINK    — highlights current page
+ * 4.  SCROLL REVEAL      — IntersectionObserver fade-in
+ * 5.  SMOOTH ANCHOR      — smooth scroll for #hash links
+ * 6.  TICK SOUND         — Web Audio API clock tick
+ * 7.  FORM HANDLER       — Formspree submission + validation
+ * 8.  PORTAL HOOKS       — stubs for Appscrip SSO / redirects
+ * 9.  CLOCK LOADER       — "Eleventh Hour" splash screen
  *
  * FOR APPSCRIP DEVELOPERS
  * ─────────────────────────────────────────────────────────
@@ -23,7 +24,6 @@
 
 (function () {
   'use strict';
-
 
   /* ═══════════════════════════════════════════════════════
      1. NAV SCROLL
@@ -44,7 +44,6 @@
     onScroll(); // run once on load
   }
 
-
   /* ═══════════════════════════════════════════════════════
      2. MOBILE MENU
      Toggles .is-open on .mob-menu and .nav-hamburger.
@@ -53,7 +52,7 @@
   var _menuOpen = false;
 
   function initMobileMenu() {
-    var btn  = document.getElementById('navHamburger');
+    var btn = document.getElementById('navHamburger');
     var menu = document.getElementById('mobMenu');
     if (!btn || !menu) return;
 
@@ -71,13 +70,17 @@
 
   window.TEH.closeMenu = function () {
     _menuOpen = false;
-    var btn  = document.getElementById('navHamburger');
+    var btn = document.getElementById('navHamburger');
     var menu = document.getElementById('mobMenu');
-    if (btn)  { btn.classList.remove('is-open'); btn.setAttribute('aria-expanded', 'false'); }
-    if (menu) { menu.classList.remove('is-open'); }
+    if (btn) {
+      btn.classList.remove('is-open');
+      btn.setAttribute('aria-expanded', 'false');
+    }
+    if (menu) {
+      menu.classList.remove('is-open');
+    }
     document.body.style.overflow = '';
   };
-
 
   /* ═══════════════════════════════════════════════════════
      3. ACTIVE NAV LINK
@@ -97,7 +100,6 @@
     });
   }
 
-
   /* ═══════════════════════════════════════════════════════
      4. SCROLL REVEAL
      Observes all .teh-reveal elements.
@@ -110,7 +112,9 @@
 
     if (!('IntersectionObserver' in window)) {
       // Fallback: show everything immediately for old browsers
-      els.forEach(function (el) { el.classList.add('teh-reveal--visible'); });
+      els.forEach(function (el) {
+        el.classList.add('teh-reveal--visible');
+      });
       return;
     }
 
@@ -126,9 +130,10 @@
       rootMargin: '0px 0px -40px 0px'
     });
 
-    els.forEach(function (el) { observer.observe(el); });
+    els.forEach(function (el) {
+      observer.observe(el);
+    });
   }
-
 
   /* ═══════════════════════════════════════════════════════
      5. SMOOTH ANCHOR SCROLL
@@ -145,29 +150,28 @@
         if (!target) return;
 
         e.preventDefault();
-        var navH   = parseInt(
+        var navH = parseInt(
           getComputedStyle(document.documentElement).getPropertyValue('--teh-nav-h'),
           10
         ) || 72;
         var top = target.getBoundingClientRect().top + window.scrollY - navH;
-        window.scrollTo({ top: top, behavior: 'smooth' });
+        window.scrollTo({
+          top: top,
+          behavior: 'smooth'
+        });
         window.TEH.closeMenu();
       });
     });
   }
 
-
   /* ═══════════════════════════════════════════════════════
      6. TICK SOUND
      Generates a subtle clock tick using Web Audio API.
-     No external audio file needed.
-     Called on successful form submission.
-     To change pitch: adjust osc.frequency.value (default 1200 Hz).
   ═══════════════════════════════════════════════════════ */
   window.TEH.playTick = function () {
     try {
-      var ctx  = new (window.AudioContext || window.webkitAudioContext)();
-      var osc  = ctx.createOscillator();
+      var ctx = new (window.AudioContext || window.webkitAudioContext)();
+      var osc = ctx.createOscillator();
       var gain = ctx.createGain();
 
       osc.connect(gain);
@@ -182,21 +186,13 @@
       osc.start(ctx.currentTime);
       osc.stop(ctx.currentTime + 0.08);
     } catch (e) {
-      // Silently fail if AudioContext is unavailable (some private browsers)
+      // Silently fail if AudioContext is unavailable
     }
   };
 
-
   /* ═══════════════════════════════════════════════════════
      7. FORM HANDLER
-     Usage in HTML:
-       <form id="myForm" onsubmit="TEH.submitForm(event, 'myForm', 'myBtn')">
-         <button id="myBtn" class="teh-btn teh-btn--primary" data-label="Send">Send</button>
-       </form>
-
-     ► SETUP: Replace FORMSPREE_ENDPOINT below with your
-       actual endpoint ID from formspree.io
-       Example: 'https://formspree.io/f/xyzabc12'
+     Formspree submission + validation
   ═══════════════════════════════════════════════════════ */
   var FORMSPREE_ENDPOINT = 'https://formspree.io/f/REPLACE_WITH_YOUR_ID';
 
@@ -204,7 +200,7 @@
     e.preventDefault();
 
     var form = document.getElementById(formId);
-    var btn  = document.getElementById(btnId);
+    var btn = document.getElementById(btnId);
     if (!form || !btn) return;
 
     // --- Client-side validation ---
@@ -217,7 +213,7 @@
         valid = false;
       }
       if (field.type === 'email' && field.value &&
-          !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(field.value)) {
+        !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(field.value)) {
         field.style.outline = '1px solid #EF4444';
         valid = false;
       }
@@ -226,107 +222,71 @@
     if (!valid) {
       var orig = btn.textContent;
       btn.textContent = 'Please fill in all required fields';
-      setTimeout(function () { btn.textContent = orig; }, 3000);
+      setTimeout(function () {
+        btn.textContent = orig;
+      }, 3000);
       return;
     }
 
     // --- Submit ---
     var originalLabel = btn.dataset.label || btn.textContent;
-    btn.disabled    = true;
+    btn.disabled = true;
     btn.textContent = 'Sending…';
 
     fetch(FORMSPREE_ENDPOINT, {
-      method:  'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept':       'application/json'
-      },
-      body: JSON.stringify(Object.fromEntries(new FormData(form)))
-    })
-    .then(function (res) {
-      if (res.ok) {
-        window.TEH.playTick();
-        btn.textContent          = '✓ Sent — we\'ll respond within 24 hours';
-        btn.style.background     = '#16A34A';
-        btn.style.borderColor    = '#16A34A';
-        form.reset();
-      } else {
-        throw new Error('Server error');
-      }
-    })
-    .catch(function () {
-      btn.disabled             = false;
-      btn.textContent          = 'Error — please try again';
-      btn.style.background     = '#DC2626';
-      btn.style.borderColor    = '#DC2626';
-      setTimeout(function () {
-        btn.textContent       = originalLabel;
-        btn.style.background  = '';
-        btn.style.borderColor = '';
-      }, 3500);
-    });
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(Object.fromEntries(new FormData(form)))
+      })
+      .then(function (res) {
+        if (res.ok) {
+          window.TEH.playTick();
+          btn.textContent = '✓ Sent — we\'ll respond within 24 hours';
+          btn.style.background = '#16A34A';
+          btn.style.borderColor = '#16A34A';
+          form.reset();
+        } else {
+          throw new Error('Server error');
+        }
+      })
+      .catch(function () {
+        btn.disabled = false;
+        btn.textContent = 'Error — please try again';
+        btn.style.background = '#DC2626';
+        btn.style.borderColor = '#DC2626';
+        setTimeout(function () {
+          btn.textContent = originalLabel;
+          btn.style.background = '';
+          btn.style.borderColor = '';
+        }, 3500);
+      });
   };
-
 
   /* ═══════════════════════════════════════════════════════
      8. PORTAL HOOKS  (FOR APPSCRIP DEVELOPERS)
-     ─────────────────────────────────────────────────────
-     These stubs are called by portal entry buttons.
-     Replace each function body with your SSO / redirect logic.
-
-     HTML trigger example:
-       <a href="#" onclick="TEH.portal.carrier(event)">Carrier Login</a>
-       <a href="#" data-portal="agent">Agent Portal</a>
-
-     data-portal attributes are auto-wired below.
-     ───────────────────────────────────────────────────── */
+  ═══════════════════════════════════════════════════════ */
   window.TEH.portal = {
-
-    /**
-     * Carrier portal entry point
-     * Replace with Appscrip carrier SSO redirect
-     */
     carrier: function (e) {
       if (e) e.preventDefault();
-      // TODO (Appscrip): redirect to carrier portal with SSO token
-      // Example: window.location.href = 'https://app.tehlogistics.com/carrier';
       console.info('[TEH] carrier portal hook — awaiting Appscrip integration');
     },
-
-    /**
-     * Agent portal entry point
-     * Replace with Appscrip agent SSO redirect
-     */
     agent: function (e) {
       if (e) e.preventDefault();
-      // TODO (Appscrip): redirect to agent portal with SSO token
-      // Example: window.location.href = 'https://app.tehlogistics.com/agent';
       console.info('[TEH] agent portal hook — awaiting Appscrip integration');
     },
-
-    /**
-     * Shipper / tracking portal entry point
-     * Replace with Appscrip tracking embed or redirect
-     */
     tracking: function (e) {
       if (e) e.preventDefault();
-      // TODO (Appscrip): embed or redirect to TEH FleetTrack (Geotab)
-      // Example: window.location.href = 'https://app.tehlogistics.com/tracking';
       console.info('[TEH] tracking portal hook — awaiting Appscrip integration');
     },
-
-    /**
-     * Hub / platform dashboard
-     */
     hub: function (e) {
       if (e) e.preventDefault();
-      // TODO (Appscrip): redirect to main platform hub
       console.info('[TEH] hub portal hook — awaiting Appscrip integration');
     }
-
   };
 
-  // Auto-wire data-portal attributes to portal functions
   function initPortalLinks() {
     document.querySelectorAll('[data-portal]').forEach(function (el) {
       var key = el.dataset.portal;
@@ -336,6 +296,38 @@
     });
   }
 
+  /* ═══════════════════════════════════════════════════════
+     9. CLOCK LOADER (DUAL-HAND ELEVENTH HOUR)
+  ═══════════════════════════════════════════════════════ */
+  function initClockLoader() {
+  const loader = document.getElementById("loader");
+  const hourHand = document.getElementById("hourHand");
+  const minuteHand = document.getElementById("minuteHand");
+
+  if (!loader || !hourHand || !minuteHand) return;
+
+  // 1. Start animations
+  hourHand.classList.add("animate-hour");
+  minuteHand.classList.add("animate-minute");
+
+  // 2. Define the closing logic in a reusable function
+  function revealPage() {
+    if (loader.classList.contains("loader--hidden")) return; // Don't run twice
+    
+    setTimeout(() => {
+      loader.classList.add("loader--hidden");
+      if (typeof window.TEH.initClockAlert === "function") {
+        window.TEH.initClockAlert();
+      }
+    }, 400);
+  }
+
+  // 3. Listen for animation end
+  hourHand.addEventListener("animationend", revealPage);
+
+  // 4. SAFETY TIMEOUT: Force load after 3.5s if animation fails/glitches
+  setTimeout(revealPage, 3500); 
+}
 
   /* ═══════════════════════════════════════════════════════
      INIT — run all modules on DOM ready
@@ -347,31 +339,13 @@
     initReveal();
     initSmoothAnchor();
     initPortalLinks();
+    initClockLoader();
   }
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
   } else {
-    init(); // DOM already ready
+    init();
   }
-  document.addEventListener("DOMContentLoaded", function() {
-    const loader = document.getElementById("loader");
-    const hand = document.getElementById("clockHand");
 
-    // Start the clock hand animation
-    hand.classList.add("clock__hand--animate");
-
-    // Listen for the end of the animation
-    hand.addEventListener("animationend", function() {
-        // Once the hand stops at 11, wait a brief moment for impact
-        setTimeout(() => {
-            loader.classList.add("loader--hidden");
-            
-            // Optional: Trigger the Clock Alert from earlier after page load
-            if (typeof initClockAlert === "function") {
-                initClockAlert();
-            }
-        }, 300); 
-    });
-});
 }());

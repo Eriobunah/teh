@@ -248,20 +248,23 @@
       margin-bottom: var(--sp-md);
     }
 
-    /* Trust bar — white strip anchored to bottom of hero */
     .hp-trust {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow: hidden;
       position: relative;
       z-index: 1;
-      background: black;
-      padding: 60px 48px;
-      width: 100%;
+      padding: 80px 0;
       margin-top: 100px;
     }
+
 
     .hp-trust__label {
       font-family: var(--teh-font-head);
       font-size: 15px;
-      font-weight: 400;
+      font-weight: 500;
       letter-spacing: 2.5px;
       text-transform: uppercase;
       color: white;
@@ -272,10 +275,16 @@
     .hp-trust__logos {
       display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 50px;
+      justify-content: space-between;
+      width: 100%;
+      padding: 0 48px;
+      gap: 40px;
       flex-wrap: wrap;
       margin-top: 40px;
+    }
+
+    .hp-trust__logos .make-white {
+      filter: brightness(0) invert(1);
     }
 
     /* ── HP: WHO WE ARE ────────────────────────────── */
@@ -823,11 +832,11 @@
     <div class="hp-trust" role="complementary" aria-label="Industry certifications">
     <p class="hp-trust__label">Trusted Across the Oil &amp; Gas Supply Chain</p>
     <div class="hp-trust__logos">
-        <img src="assets/images/trust1.png" alt="IATA" class="teh-cert-logo__img"/>
-        <img src="assets/images/trust2.png" alt="CTPAT-certified" class="teh-cert-logo__img"/>
+        <img src="assets/images/trust1.png" alt="IATA" class="teh-cert-logo__img make-white"/>
+        <img src="assets/images/trust2.png" alt="CTPAT-certified" class="teh-cert-logo__img white make-white"/>
         <img src="assets/images/trust3.png" alt="Licensed Freight Forwarder" class="teh-cert-logo__img"/>
-        <img src="assets/images/trust4.png" alt="ISNetworld" class="teh-cert-logo__img"/>
-        <img src="assets/images/trust5.png" alt="US DOT" class="teh-cert-logo__img"/>
+        <img src="assets/images/trust4.png" alt="ISNetworld" class="teh-cert-logo__img whiteisnetworld"/>
+        <img src="assets/images/trust5.png" alt="US DOT" class="teh-cert-logo__img make-white"/>
     </div>
 </div>
 
@@ -1107,11 +1116,11 @@
       <div class="teh-cert-logos teh-reveal teh-reveal--delay-2"
            role="list"
            aria-label="Industry certifications">
-        <span class="teh-cert-logo" role="listitem" title="IATA Certified"><img src="assets/images/trust1.png" alt="IATA" class="teh-cert-logo__img"/></span>
-        <span class="teh-cert-logo" role="listitem" title="CTPAT Certified"><img src="assets/images/trust2.png" alt="CTPAT" class="teh-cert-logo__img"/></span>
-        <span class="teh-cert-logo" role="listitem" title="Licensed Freight Forwarder"><img src="assets/images/trust3.png" alt="Licensed Freight Forwarder" class="teh-cert-logo__img"/></span>
-        <span class="teh-cert-logo" role="listitem" title="ISNetworld Registered"><img src="assets/images/trust4.png" alt="ISNetworld" class="teh-cert-logo__img"/></span>
-        <span class="teh-cert-logo" role="listitem" title="US DOT Compliant"><img src="assets/images/trust5.png" alt="US DOT" class="teh-cert-logo__img"/></span>
+        <span class="teh-cert-logo" role="listitem" title="IATA Certified"><img src="assets/images/trust1.png" alt="IATA" class="teh-cert-logo__img make-white"/></span>
+        <span class="teh-cert-logo" role="listitem" title="CTPAT Certified"><img src="assets/images/trust2.png" alt="CTPAT" class="teh-cert-logo__img make-white"/></span>
+        <span class="teh-cert-logo white" role="listitem" title="Licensed Freight Forwarder"><img src="assets/images/trust3.png" alt="Licensed Freight Forwarder" class="teh-cert-logo__img"/></span>
+        <span class="teh-cert-logo" role="listitem" title="ISNetworld Registered"><img src="assets/images/trust4.png" alt="ISNetworld" class="teh-cert-logo__img whiteisnetworld"/></span>
+        <span class="teh-cert-logo" role="listitem" title="US DOT Compliant"><img src="assets/images/trust5.png" alt="US DOT" class="teh-cert-logo__img make-white"/></span>
       </div>
 
     </div>
@@ -1258,14 +1267,14 @@
 
 </body>
 <div id="loader" class="loader">
-  <div class="clock">
-    <div class="clock__face">
-      <!-- Markers for 12 and 11 -->
-      <div class="clock__marker clock__marker--12"></div>
-      <div class="clock__marker clock__marker--11"></div>
+    <div class="clock">
+      <div class="clock__face">
+        <div class="clock__marker clock__marker--12"></div>
+        <div class="clock__marker clock__marker--11"></div>
+      </div>
+      <div id="minuteHand" class="clock__hand clock__hand--minute"></div>
+      <div id="hourHand" class="clock__hand clock__hand--hour"></div>
     </div>
-    <div id="clockHand" class="clock__hand"></div>
+    <p class="loader__text">The Eleventh Hour</p>
   </div>
-  <p class="loader__text">The Eleventh Hour</p>
-</div>
 </html>

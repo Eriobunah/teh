@@ -89,7 +89,7 @@
   position: fixed;
   inset: 0;
   background-color: #0A1628; /* Brand Navy Black */
-  z-index: 9999;
+  z-index: 10000;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -97,65 +97,62 @@
   transition: opacity 0.6s ease-in-out, visibility 0.6s;
 }
 
-/* The Clock Circle */
 .clock {
   width: 120px;
   height: 120px;
-  border: 2px solid rgba(243, 239, 230, 0.2); /* Faded Warm White */
+  border: 2px solid rgba(243, 239, 230, 0.2);
   border-radius: 50%;
   position: relative;
   margin-bottom: 24px;
 }
 
-/* Clock Hand */
 .clock__hand {
   position: absolute;
   bottom: 50%;
-  left: calc(50% - 1.5px);
-  width: 3px;
-  height: 45%;
-  background-color: #F5A623; /* Tech Amber */
+  left: 50%;
   transform-origin: bottom center;
-  /* 330 degrees represents 11:00 on a clock face */
-  transform: rotate(0deg);
-  border-radius: 3px;
+  border-radius: 4px;
 }
 
-/* The Animation: Moving to 11 o'clock */
-.clock__hand--animate {
-  animation: moveToEleven 2.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+.clock__hand--hour {
+  width: 4px;
+  height: 35%;
+  background-color: #F5A623; /* Tech Amber */
+  margin-left: -2px;
+  z-index: 2;
 }
 
-@keyframes moveToEleven {
+.clock__hand--minute {
+  width: 2px;
+  height: 45%;
+  background-color: #F3EFE6; /* Warm White */
+  margin-left: -1px;
+  z-index: 1;
+  opacity: 0.8;
+}
+
+/* 3-Second Precision Animations */
+.animate-hour {
+  animation: hourToEleven 3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.animate-minute {
+  animation: minuteSpin 3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes hourToEleven {
+  from { transform: rotate(0deg); }
   to { transform: rotate(330deg); }
 }
 
-/* Optional markers for visual reference */
-.clock__marker {
-  position: absolute;
-  width: 2px;
-  height: 8px;
-  background: rgba(243, 239, 230, 0.3);
-  left: calc(50% - 1px);
-}
-.clock__marker--12 { top: 5px; }
-.clock__marker--11 { 
-  top: 15px; 
-  left: 28px; 
-  transform: rotate(-30deg); 
-}
-
-.loader__text {
-  font-family: 'Barlow Condensed', sans-serif;
-  color: #F3EFE6;
-  text-transform: uppercase;
-  letter-spacing: 4px;
-  font-size: 14px;
+@keyframes minuteSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(1080deg); } /* 3 Full Rotations */
 }
 
 .loader--hidden {
-  opacity: 0;
-  visibility: hidden;
+  opacity: 0 !important;
+  visibility: hidden !important;
 }
 
 /* ─────────────────────────────────────────────────────────
@@ -591,21 +588,28 @@ address         { font-style: normal; }
 
 /* Certification logos */
 .teh-cert-logos {
+  width: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  overflow: hidden;
   gap: 40px;
   flex-wrap: wrap;
-  padding: 40px 0;
+  padding: 0 48px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+.teh-cert-logos .make-white {
+  filter: brightness(0) invert(1);
 }
 
 .teh-cert-logo {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: px;
   padding: 0;
-  transition: opacity 0.2s ease;
 }
 
 .teh-cert-logo:hover {
@@ -619,8 +623,9 @@ address         { font-style: normal; }
 }
 
 .teh-cert-logo__img {
-  height: 50px;
-  width: auto;
+  height: auto;
+  width: 100px;
+  transition: all 0.3s ease;
 }
 
 /* Social icons */
@@ -845,6 +850,6 @@ address         { font-style: normal; }
   .teh-footer__grid { grid-template-columns: 1fr; gap: 32px; }
   .teh-footer__cta-row { flex-direction: column; align-items: flex-start; gap: 16px; }
   .teh-btn { padding: 12px 24px; font-size: 12px; }
-  .teh-cert-logos { gap: 10px; }
+  .teh-cert-logos { gap: 8px; }
   .teh-cert-logo { font-size: 9px; padding: 8px 12px; }
 }
