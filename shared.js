@@ -297,37 +297,43 @@
   }
 
   /* ═══════════════════════════════════════════════════════
-     9. CLOCK LOADER (DUAL-HAND ELEVENTH HOUR)
+     9. CLOCK LOADER (RELIABLE REVEAL)
   ═══════════════════════════════════════════════════════ */
   function initClockLoader() {
-  const loader = document.getElementById("loader");
-  const hourHand = document.getElementById("hourHand");
-  const minuteHand = document.getElementById("minuteHand");
+    const loader = document.getElementById("loader");
+    const hourHand = document.getElementById("hourHand");
+    const minuteHand = document.getElementById("minuteHand");
 
-  if (!loader || !hourHand || !minuteHand) return;
+    if (!loader || !hourHand || !minuteHand) {
+      console.warn("Loader elements missing from DOM");
+      return;
+    }
 
-  // 1. Start animations
-  hourHand.classList.add("animate-hour");
-  minuteHand.classList.add("animate-minute");
-
-  // 2. Define the closing logic in a reusable function
-  function revealPage() {
-    if (loader.classList.contains("loader--hidden")) return; // Don't run twice
-    
-    setTimeout(() => {
+    // Function to hide loader and show content
+    function revealPage() {
+      if (loader.classList.contains("loader--hidden")) return;
+      
+      console.log("Striking the Eleventh Hour: Revealing page.");
       loader.classList.add("loader--hidden");
+      
+      // Ensure body scroll is re-enabled if you disabled it in init
+      document.body.style.overflow = ''; 
+      
       if (typeof window.TEH.initClockAlert === "function") {
         window.TEH.initClockAlert();
       }
-    }, 400);
+    }
+
+    // Trigger animations
+    hourHand.classList.add("animate-hour");
+    minuteHand.classList.add("animate-minute");
+
+    // Listen for the slower (hour) hand to finish its movement to 11
+    hourHand.addEventListener("animationend", revealPage);
+
+    // Fail-safe: Force load after 3.5s regardless of animation state
+    setTimeout(revealPage, 3500); 
   }
-
-  // 3. Listen for animation end
-  hourHand.addEventListener("animationend", revealPage);
-
-  // 4. SAFETY TIMEOUT: Force load after 3.5s if animation fails/glitches
-  setTimeout(revealPage, 3500); 
-}
 
   /* ═══════════════════════════════════════════════════════
      INIT — run all modules on DOM ready
